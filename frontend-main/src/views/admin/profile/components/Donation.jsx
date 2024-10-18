@@ -1,5 +1,6 @@
 import Card from "components/card";
 import React from "react";
+import TimelineComponent from "./Timeline";
 
 const Donation = () => {
   return (
@@ -16,6 +17,7 @@ const Donation = () => {
       </div>
       {/* Cards */}
       <div className="grid grid-cols-2 gap-4 px-2">
+        <TimelineComponent />
       </div>
     </Card>
   );
