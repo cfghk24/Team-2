@@ -1,0 +1,25 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px; /* Minimal padding */
+  border-radius: 6px; /* Smaller rounded corners */
+  width: 95%; /* Make the modal wider */
+  max-width: 800px; /* Adjust the maximum width */
+  height: auto; /* Automatic height adjustment based on content */
+  max-height: 90vh; /* 80% of the viewport height to avoid cut off */
+  overflow-y: auto; /* Scrollable content if it exceeds the height */
+  box-shadow: none; /* Remove shadow */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Subtle overlay */
+  z-index: 1000;
+}

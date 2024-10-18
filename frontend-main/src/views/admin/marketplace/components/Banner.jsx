@@ -5,6 +5,7 @@ const BannerForm = () => {
   const [header, setHeader] = useState("");
   const [story, setStory] = useState("");
   const [file, setFile] = useState(null);
+  const [priority, setPriority] = useState("General"); // New state for priority
 
   const handleFileUpload = (e) => {
     setFile(e.target.files[0]);
@@ -16,6 +17,7 @@ const BannerForm = () => {
     const formData = new FormData();
     formData.append("header", header);
     formData.append("story", story);
+    formData.append("priority", priority); // Include priority in the form data
     if (file) {
       formData.append("file", file);
     }
@@ -69,7 +71,7 @@ const BannerForm = () => {
               className="w-full mt-2 rounded-lg px-4 py-2 text-black"
               placeholder="Enter the post story"
               required
-              style={{minHeight: "120px"}}
+              style={{ minHeight: "120px" }}
             />
           </div>
           <div className="mb-4">
@@ -85,18 +87,27 @@ const BannerForm = () => {
             />
           </div>
 
+          <div className="mb-4">
+            <label htmlFor="priority" className="text-white font-medium">
+              Priority
+            </label>
+            <select
+              id="priority"
+              value={priority}
+              onChange={(e) => setPriority(e.target.value)}
+              className="w-full mt-2 rounded-lg px-4 py-2 text-black"
+            >
+              <option value="Urgent">Urgent</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+
           <div className="mt-[36px] flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
             <button
               type="submit"
               className="text-black linear rounded-xl bg-white px-4 py-2 text-center text-base font-medium transition duration-200 hover:!bg-white/80 active:!bg-white/70"
             >
               Submit Post
-            </button>
-            <button
-              type="button"
-              className="text-base font-medium text-lightPrimary hover:text-lightPrimary 2xl:ml-2"
-            >
-              Watch Video
             </button>
           </div>
         </form>

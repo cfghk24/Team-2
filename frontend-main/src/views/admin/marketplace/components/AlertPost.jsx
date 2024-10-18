@@ -8,17 +8,17 @@ const AlertPost = ({ photo, header, story, status, statusType, onUpvote, upvotes
   };
 
   return (
-    <div className="relative flex flex-row items-start justify-between rounded-[20px] bg-white shadow-lg p-8 max-w-[900px] h-64">
+    <div className="relative flex flex-row items-start justify-between rounded-[20px] bg-white shadow-lg p-8 max-w-[1000px] h-120 mb-3"> {/* Increased height */}
       {/* Right side: User Uploaded Photo */}
-      <div className="w-1/3 mr-5"> {/* Adjust margin to move it more to the left */}
+      <div className="w-1/3 mr-5">
         {photo ? (
           <img
             src={photo}
             alt="Uploaded Post"
-            className="w-full h-40 object-cover rounded-lg"  // Increased image height
+            className="w-full h-56 object-cover rounded-lg"  // Increased image height
           />
         ) : (
-          <div className="w-full h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+          <div className="w-full h-56 bg-gray-200 rounded-lg flex items-center justify-center">
             <span className="text-gray-500">No photo uploaded</span>
           </div>
         )}
