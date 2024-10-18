@@ -1,6 +1,8 @@
 //jshint esversion:6
 import authRouter from "./routes/auth/auth";
+import couponRouter from "./routes/operations/coupons";
 import router from "./routes/operations/main";
+import postsRouter from "./routes/operations/posts";
 
 require("dotenv").config();
 const express = require("express");
@@ -44,6 +46,8 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 app.use("/api/web/", router);
 app.use("/api/web/", authRouter);
+app.use("/api/web/", postsRouter);
+app.use("/api/web/", couponRouter);
 
 app.use(apiLimiter);
 

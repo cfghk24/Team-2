@@ -12,7 +12,7 @@ export async function addPost(post: Post) {
 
     if (existingPost == null) {
       // If the post doesn't exist, insert it
-      post.post_id = generateTenRandomNumbers();
+      post.post_id = getRandomNumbers().toString();
       let keywords = await generateKeyWords(post.description || "");
       post.keywords = keywords;
       const action = await postsCollection.insertOne(post);
@@ -46,10 +46,13 @@ export async function getAllPosts() {
   }
 }
 
-function generateTenRandomNumbers() {
-  let numbers = "";
+function getRandomNumbers(min: number = 1, max: number = 100): number[] {
+  const result: number[] = [];
+
   for (let i = 0; i < 10; i++) {
-    numbers += Math.random();
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    result.push(randomNumber);
   }
-  return numbers;
+
+  return result;
 }
