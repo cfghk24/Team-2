@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "app-backend-414212",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "app-backend-414212@appspot.gserviceaccount.com",
+  "client_id": "109106069818104666443",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/app-backend-414212%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
