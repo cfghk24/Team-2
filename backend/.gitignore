@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+backend/app-backend-414212-adc93c72b9ab.json

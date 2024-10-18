@@ -1,5 +1,6 @@
 import { Post } from "../../models/model";
 import { client } from "../userManagement/auth";
+import { generateKeyWords } from "./AI";
 
 export async function addPost(post: Post) {
   try {
@@ -12,6 +13,8 @@ export async function addPost(post: Post) {
     if (existingPost == null) {
       // If the post doesn't exist, insert it
       post.post_id = generateTenRandomNumbers();
+      let keywords = await generateKeyWords(post.description || "");
+      post.keywords = keywords;
       const action = await postsCollection.insertOne(post);
       return { message: "Post added successfully", status: 200 };
     } else {

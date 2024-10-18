@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/vertexai": "^1.9.0",
     "axios": "^1.5.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
@@ -27,6 +28,7 @@
     "node-imap": "^0.9.6",
     "node-qpdf": "^1.0.3",
     "nodemon": "^3.0.1",
+    "openai": "^4.68.0",
     "path": "^0.12.7",
     "pg": "^8.12.0",
     "qs": "^6.11.2",
