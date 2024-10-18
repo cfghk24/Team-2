@@ -56,3 +56,22 @@ function getRandomNumbers(min: number = 1, max: number = 100): number[] {
 
   return result;
 }
+
+export async function deletePost(post_id: string) {
+  try {
+    const database = client.db("content");
+    const postsCollection = database.collection("posts");
+
+    // Find and delete the post by post_id
+    const result = await postsCollection.deleteOne({ post_id: post_id });
+
+    if (result.deletedCount === 1) {
+      return { message: "Post deleted successfully", status: 200 };
+    } else {
+      return { message: "Post not found", status: 404 };
+    }
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    return { message: "Error deleting post", status: 500, error: error };
+  }
+}

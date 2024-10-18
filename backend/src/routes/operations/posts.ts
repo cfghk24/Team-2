@@ -72,4 +72,38 @@ postsRouter.post("/posts/dummy", verifyToken, multerUpload.any(), async (req: Re
   }
 });
 
+postsRouter.get("/posts/:post_id", verifyToken, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { post_id } = req.params;
+
+    // Search for the post by post_id
+    const post = posts.find(p => p.post_id === post_id);
+
+    if (post) {
+      res.status(200).json(post);  // Return the found post
+    } else {
+      res.status(404).json({ message: "Post not found" });
+    }
+  } catch (error: any) {
+    res.status(500).json({ message: "Error occurred", error });
+  }
+});
+
+postsRouter.delete("/posts/:post_id", verifyToken, async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { post_id } = req.params;
+
+    // Call the deletePost function
+    const result = await deletePost(post_id);
+
+    res.status(result.status).json(result);
+  } catch (error: any) {
+    res.status(500).json({ message: "Error occurred", error });
+  }
+});
+
+
+
+
+
 export default postsRouter;
