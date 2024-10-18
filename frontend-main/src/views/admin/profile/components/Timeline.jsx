@@ -83,8 +83,8 @@ function HomeIcon(props: SvgIconProps) {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot color="primary" variant="outlined">
-              <HomeIcon />
+            <TimelineDot color="primary">
+            <RepeatIcon />
             </TimelineDot>
             <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
           </TimelineSeparator>
@@ -108,7 +108,7 @@ function HomeIcon(props: SvgIconProps) {
           <TimelineSeparator>
             <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
             <TimelineDot color="secondary">
-              <RepeatIcon />
+            <HomeIcon />
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>

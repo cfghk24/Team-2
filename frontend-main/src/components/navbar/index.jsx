@@ -84,29 +84,42 @@ const Navbar = (props) => {
               </div>
 
               <button className="flex w-full items-center">
-                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
+                {/* <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
                   <BsArrowBarUp />
-                </div>
-                <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm">
-                  <p className="mb-1 text-left text-base font-bold text-gray-900 dark:text-white">
-                    New Update: Horizon UI Dashboard PRO
+                </div> */}
+                <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm bg-green-100 dark:bg-green-900">
+                  <p className="mb-1 text-left text-base font-bold text-green-700 dark:text-green-300">
+                    A helpful donation!
                   </p>
-                  <p className="font-base text-left text-xs text-gray-900 dark:text-white">
-                    A new update for your downloaded item is available!
+                  <p className="font-base text-left text-xs text-gray-900 dark:text-gray-100">
+                    Your contribution will help five rescued dogs.
+                  </p>
+                  <p className="font-base text-left text-xs text-gray-700 dark:text-gray-300 mt-1">
+                    Amount Donated: <span className="font-bold">$100</span>
+                  </p>
+                  <p className="font-base text-left text-xs text-gray-700 dark:text-gray-300">
+                    Date: <span className="font-bold">2024/10/21</span>
                   </p>
                 </div>
+
               </button>
 
               <button className="flex w-full items-center">
-                <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
+                {/* <div className="flex h-full w-[85px] items-center justify-center rounded-xl bg-gradient-to-b from-brandLinear to-brand-500 py-4 text-2xl text-white">
                   <BsArrowBarUp />
-                </div>
-                <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm">
-                  <p className="mb-1 text-left text-base font-bold text-gray-900 dark:text-white">
-                    New Update: Horizon UI Dashboard PRO
+                </div> */}
+                <div className="ml-2 flex h-full w-full flex-col justify-center rounded-lg px-1 text-sm bg-green-100 dark:bg-green-900">
+                  <p className="mb-1 text-left text-base font-bold text-green-700 dark:text-green-300">
+                    Donation Successful!
                   </p>
-                  <p className="font-base text-left text-xs text-gray-900 dark:text-white">
-                    A new update for your downloaded item is available!
+                  <p className="font-base text-left text-xs text-gray-900 dark:text-gray-100">
+                    Thank you for your generous donation. Your contribution will help support our cause.
+                  </p>
+                  <p className="font-base text-left text-xs text-gray-700 dark:text-gray-300 mt-1">
+                    Amount Donated: <span className="font-bold">$100</span>
+                  </p>
+                  <p className="font-base text-left text-xs text-gray-700 dark:text-gray-300">
+                    Date: <span className="font-bold">2024/10/18</span>
                   </p>
                 </div>
               </button>
