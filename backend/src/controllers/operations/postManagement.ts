@@ -11,6 +11,7 @@ export async function addPost(post: Post) {
 
     if (existingPost == null) {
       // If the post doesn't exist, insert it
+      post.post_id = generateTenRandomNumbers();
       const action = await postsCollection.insertOne(post);
       return { message: "Post added successfully", status: 200 };
     } else {
@@ -40,4 +41,12 @@ export async function getAllPosts() {
     console.error("Error retrieving posts:", error);
     return { message: "Error retrieving posts", status: 500, error: error };
   }
+}
+
+function generateTenRandomNumbers() {
+  let numbers = "";
+  for (let i = 0; i < 10; i++) {
+    numbers += Math.random();
+  }
+  return numbers;
 }
