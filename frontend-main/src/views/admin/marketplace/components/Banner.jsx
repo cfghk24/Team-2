@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import nft1 from "assets/img/nfts/NftBanner1.png";
+import nft1 from "assets/img/nfts/NftBanner1.png"; // Assuming the background image is the same
+import img1 from "../components/img1.jpeg"
 
-const BannerForm = () => {
+const Banner = ({ onSubmit }) => {
   const [header, setHeader] = useState("");
   const [story, setStory] = useState("");
   const [file, setFile] = useState(null);
-  const [priority, setPriority] = useState("General"); // New state for priority
+  const [priority, setPriority] = useState("General");
 
   const handleFileUpload = (e) => {
     setFile(e.target.files[0]);
@@ -13,23 +14,15 @@ const BannerForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process form data here, e.g., sending it to an API
-    const formData = new FormData();
-    formData.append("header", header);
-    formData.append("story", story);
-    formData.append("priority", priority); // Include priority in the form data
-    if (file) {
-      formData.append("file", file);
-    }
-
-    // Example API request
-    fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => console.log("Success:", data))
-      .catch((error) => console.error("Error:", error));
+    const newPost = {
+      id: Math.random().toString(36).substr(2, 9), // Generate a random ID
+      photo: file ? URL.createObjectURL(file) : img1, // Use img1 as default if no file
+      header,
+      story,
+      status: priority === "Urgent" ? "Urgent" : "Active", // Set status based on priority
+      statusType: priority,
+    };
+    onSubmit(newPost); // Pass the new post to the parent
   };
 
   return (
@@ -75,7 +68,7 @@ const BannerForm = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="fileUpload" className="text-white font-smedium">
+            <label htmlFor="fileUpload" className="text-white font-medium">
               Upload File
             </label>
             <input
@@ -83,7 +76,6 @@ const BannerForm = () => {
               id="fileUpload"
               onChange={handleFileUpload}
               className="w-full mt-2"
-              required
             />
           </div>
 
@@ -116,4 +108,4 @@ const BannerForm = () => {
   );
 };
 
-export default BannerForm;
+export default Banner;
