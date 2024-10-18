@@ -9,7 +9,7 @@ export interface UserAuthFinal {
 }
 
 export interface Post {
-  post_id: string;
+  post_id?: string;
   email: string;
   description: string | null;
   upvote: number;
