@@ -6,9 +6,9 @@ import image3 from "assets/img/profile/image3.png";
 import Card from "components/card";
 import NftCard from "components/card/NftCard";
 import NFt12 from "assets/img/nfts/Nft12.png";
-import NFt4 from "assets/img/nfts/Nft4.png";
-import NFt31 from "assets/img/nfts/Nft31.png";
-import NFt9 from "assets/img/nfts/Nft9.png";
+import NFt1 from "../assets/Nft1.png";
+import NFt2 from "../assets/Nft2.png";
+import NFt3 from "../assets/Nft3.png";
 import NFt6 from "assets/img/nfts/Nft6.png";
 import avatar1 from "assets/img/avatars/avatar1.png";
 import avatar2 from "assets/img/avatars/avatar2.png";
@@ -32,21 +32,21 @@ const Project = () => {
             title="Dog Wash Shampoo"
             author="180 Wong Chuk Hang Road, Aberdeen, Hong Kong"
             price="247"
-            image={NFt31}
+            image={NFt1}
           />
           <NftCard
             bidders={[avatar1, avatar2, avatar3]}
             title="Automatic Cat Feeder"
             author="1 Matheson Street, Causeway Bay, Hong Kong"
             price="468"
-            image={NFt12}
+            image={NFt2}
           />
           <NftCard
             bidders={[avatar1, avatar2, avatar3]}
             title="Portable Water Bottle for Dogs"
             author="Hong Kong Island, and southern shore of Kowloon"
             price="3478"
-            image={NFt9}
+            image={NFt3}
           />
       </div>
 
