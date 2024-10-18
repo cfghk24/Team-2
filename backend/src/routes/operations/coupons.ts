@@ -11,7 +11,7 @@ couponRouter.get("/coupons", verifyToken, multerUpload.any(), async (req: any, r
   res.send(all_coupons);
 });
 
-couponRouter.post("/posts", verifyToken, multerUpload.any(), async (req: any, res: Response, next: NextFunction) => {
+couponRouter.post("/coupons", verifyToken, multerUpload.any(), async (req: any, res: Response, next: NextFunction) => {
   try {
     let coupon: Coupon = req.body;
     let result = await addCoupon(coupon);
